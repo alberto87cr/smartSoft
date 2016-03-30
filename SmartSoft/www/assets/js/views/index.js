@@ -1,10 +1,3 @@
-app.loadJS([ 'createjs/utils/Proxy' ], function(){ 
-app.loadJS([ 'createjs/utils/IndexOf' ], function(){ 
-app.loadJS([ 'createjs/events/Event' ], function(){ 
-app.loadJS([ 'createjs/events/EventDispatcher' ], function(){ 
-     index.init();
-}); }); }); });
- 
 var index = {
     //VARIABLES
     // ====================================================
@@ -23,12 +16,7 @@ var index = {
     init: function() {
         app.logg('init'); 
         index.cons.go = $('#go');
-
-
-      
         index._setup();
-        
-        
         index.events.init();
     },
 
@@ -48,22 +36,13 @@ var index = {
             $(document).on('click', '.getMsgs', index.events.getMsgs_click )
 
         },
-
-       window_onResize: function(){ 
-            
-        },
-
-        window_load:function(){
-          
-        },
-
         on_home_show: function(){
             app.logg('home show');
             $('header a.relBack').fadeOut(0);
         },
         on_subPage_show: function(){
             app.logg('subPage show');
-            $('header a.relBack').fadeIn(200);
+            $('header a.relBack').fadeIn(100);
         },
         nav_close_click_click: function(){
             $('#nav').fadeIn(200);
@@ -104,17 +83,6 @@ var index = {
             }, 200);
             return false;
         },
-        azarPos_click: function(){
-            $('#nav .nav').slideUp(300); 
-            setTimeout(function(){
-                $('#nav').fadeOut(200, function(){
-                    $.mobile.changePage( "#detail", { transition: "flip", changeHash: false });
-                }); 
-            }, 200);
-            return false;
-        },
-         
-      
     },
  
     // APP CODE
@@ -139,43 +107,7 @@ var index = {
     hide_preLoader:function(){
         $('#loader').fadeOut(300);
     },
-
-    responsive:{
-        init: function(){
-            index.responsive._960();
-            index.responsive._768();
-            index.responsive._480();
-            index.responsive._320();
-        },
-        _960: function(){
-            if( $(window).width() < 1200 && $(window).width() > 959){
-              
-
-            }
-        },
-        _768: function(){
-            if( $(window).width() < 960 && $(window).width() > 479){
-               
-            }
-        },
-        _480: function(){
-            if( $(window).width() < 768 && $(window).width() > 319){
-               
-
-            }
-        },
-        _320: function(){
-            if( $(window).width() < 480){
-              
-            }
-        }
-
-    }
  
- 
-        
- 
-
-
 };
 
+index.init();
