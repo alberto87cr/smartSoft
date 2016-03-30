@@ -3322,8 +3322,7 @@ html .ui-field-contain > label + .ui-flipswitch, html .ui-popup .ui-field-contai
   z-index: 1;
   top: 0;
   left: 0;
-  background-image: url("../images/back.jpg");
-  background-size: cover; }
+  background: rgba(53, 164, 248, 0.7); }
 
 #loader {
   top: 0;
@@ -3391,7 +3390,7 @@ section {
   margin: 55px auto 0 auto !important;
   padding: 0 0 20px 0; }
   section ul {
-    padding: 150px 0 20px 0;
+    padding: 60px 0 20px 0;
     text-align: left;
     width: 85%;
     margin: 0 auto;
@@ -3431,9 +3430,16 @@ section {
     text-align: center;
     padding: 20px 0 0 0;
     margin: 0 auto; }
+    section.detail h6 {
+    font-size: 18px;
+    width: 90%;
+    color: #5D5D5D;
+    text-align: center;
+    padding: 15px 0 0 0;
+    margin: 0 auto; }
   section.detail img {
     padding: 20px 0 0 0;
-    max-width: 90%; }
+    max-width: 60px; }
   section.msgDetails {
     text-align: center;
     margin: 75px auto 0 auto !important; }
@@ -3485,10 +3491,10 @@ section {
     color: #c20c0c; }
 
 #about {
-  display: block; }
+  display: none; }
   #about .about {
-    display: block;
-    height: 150px !important; }
+    display: none;
+    height: 140px !important; }
 
 #nav {
   background: rgba(0, 0, 0, 0.5);
