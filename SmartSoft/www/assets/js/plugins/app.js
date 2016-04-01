@@ -37,6 +37,19 @@ var app = {
 			    } 
 			});
 		});
+ 	},
+ 	loadData:function(obj,callback){
+ 		var total = obj.length;
+ 		$.each(obj, function( index, value ) {
+			$.getScript('assets/js/data/'+value+'.js', function(){ 
+				app.logg(""+value+".js -- √");
+				if (index === total - 1) {
+			        if(callback != undefined){
+			        	callback();
+			        }
+			    } 
+			});
+		});
  	}
 }
 app.init();

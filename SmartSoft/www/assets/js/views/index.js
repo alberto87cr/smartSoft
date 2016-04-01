@@ -20,7 +20,6 @@ var index = {
         index.events.init();
     },
 
-
     // EVENTS
     // ====================================================
     events:{
@@ -29,12 +28,12 @@ var index = {
             $(window).load( index.events.window_load );
             $( "#home" ).bind( "pageshow", index.events.on_home_show );
             $( "#detail" ).bind( "pageshow", index.events.on_subPage_show );
-            $(document).on('click', '.relConfig', index.events.nav_close_click_click )
-            $(document).on('click', '.configClose', index.events.nav_close_click )
-            $(document).on('click', '.aboutClose', index.events.aviso_continuar_click )
-            $(document).on('click', '.aboutOpen', index.events.aviso_continuar_click )
-            $(document).on('click', '.getMsgs', index.events.getMsgs_click )
-
+            $(document).on('click', '.relConfig', index.events.nav_close_click_click );
+            $(document).on('click', '.configClose', index.events.nav_close_click );
+            $(document).on('click', '.aboutClose', index.events.aviso_continuar_click );
+            $(document).on('click', '.aboutOpen', index.events.aviso_continuar_click );
+            $(document).on('click', '.getMsgs', index.events.getMsgs_click );
+            app.loadData([ 'getData' ], function(){ });
         },
         on_home_show: function(){
             app.logg('home show');
@@ -76,11 +75,17 @@ var index = {
         },
         getMsgs_click: function(){
             $('#nav .nav').slideUp(300); 
+            $('#home ul li').fadeOut(300);
+            $('#home ul').html('');
+            $('#home ul li').fadeIn(1);
+            $('#loader p').html('Obteniendo mensajes nuevos.');
+            $('#loader').fadeIn(300);
             setTimeout(function(){
                 $('#nav').fadeOut(200, function(){
-                    $.mobile.changePage( "#detail", { transition: "flip", changeHash: false });
+                    $.mobile.changePage( "#home", { transition: "flip", changeHash: false });
                 }); 
             }, 200);
+            $data.cargarDatos(function(){$('#loader').fadeOut(300);});
             return false;
         },
     },
@@ -109,5 +114,4 @@ var index = {
     },
  
 };
-
 index.init();
