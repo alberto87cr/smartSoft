@@ -5,11 +5,11 @@ var app = {
 	},
 
     logg: function(msg){
-		console.log(" \n"+msg+" \n===================================");
+		//console.log(" \n"+msg+" \n===================================");
     },
 
     debugg: function(obj){
-		console.debug(obj);
+		//console.debug(obj);
     },
  	
  	loadJSView:function(obj,callback){
