@@ -22,7 +22,7 @@ var $data = {
         },
         ajax: {
             type: 'GET',
-            url: 'http://localhost:3000/',
+            url: 'http://192.168.1.106:3000/', //---------------------------------------- HOST IP or URL----------------
             dataType: 'json',
             crossDomains: true
         },
