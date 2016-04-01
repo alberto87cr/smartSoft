@@ -38,10 +38,8 @@ var $data = {
         app.logg('init data'); 
         $data._cons.localStorage = window.localStorage;
         if($data.decodeArray_utf8($data._cons.localStorage.getItem('mensajes')) == null){
-            console.log('1');
             $data.cargarDatos(function(){});
         } else {
-            console.log('2');
             $data.showTitles(null);
         }
     },
@@ -145,12 +143,12 @@ var $data = {
             $data._ajax.exec([], 'palabras', $data.palabras.sucessCB, cb, $data.palabras.errorCB );
         },
         sucessCB: function(data, cb){
-            console.log("Palabras descargadas de forma correcta.");
+            //console.log("Palabras descargadas de forma correcta.");
             $data.palabras.extractPal(data, cb);
             return false;
         },
         errorCB: function(data){
-            console.log("Error al descargar las palabras.");
+            //console.log("Error al descargar las palabras.");
             return false;
         },
         extractPal: function(data, cb){
@@ -169,12 +167,12 @@ var $data = {
             $data._ajax.exec([], 'enunciado', $data.enunciado.sucessCB, cb, $data.enunciado.errorCB );
         },
         sucessCB: function(data, cb){
-            console.log("Enunciado descargado de forma correcta.");
+            //console.log("Enunciado descargado de forma correcta.");
             $data.enunciado.extractEnun(data, cb);
             return false;
         },
         errorCB: function(data){
-            console.log("Error al descargar el enunciado.");
+            //console.log("Error al descargar el enunciado.");
             return false;
         },
         extractEnun: function(data, cb){
